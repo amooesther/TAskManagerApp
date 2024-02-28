@@ -3,3 +3,8 @@ background-color: red;
    
     width: 500px;
 }
+
+.completed{
+text-decoration: line-through;
+
+}

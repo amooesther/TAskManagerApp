@@ -16,12 +16,18 @@ const addTask=(task)=>{
 setTasks([...tasks, {id:uuidv4(), Task:task, completed:false, isEditing:false } ])
 console.log(tasks)
 }
+
+const toggleComplete =(id)=>{
+    setTasks(tasks.map(task=>task.id ===id ?{...task, completed:
+    !task.completed
+    }:task))
+}
   return (
-    <div 
-    className='taskWrapper'> 
+    <div className='taskWrapper'> 
+    <h1>Manage your Tasks</h1>
     <TaskMangerForm addTask={addTask}/>
     {tasks.map((task, index)=>(
-<ManageTask Task={task} key={index}/>
+<ManageTask Task={task} key={index} toggleComplete={toggleComplete}/>
     )        
     )}
  
